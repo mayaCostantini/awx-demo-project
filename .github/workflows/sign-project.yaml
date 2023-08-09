@@ -1,0 +1,25 @@
+name: Sign project with Sigstore
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  id-token: write
+
+jobs:
+  sign-project:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: install
+        run: python -m pip install .
+      - name: sigstore-ansible-github-action
+        uses: mayaCostantini/sigstore-ansible-github-action@v0.0.2
+
