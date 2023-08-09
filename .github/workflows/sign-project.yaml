@@ -8,14 +8,12 @@ on:
   workflow_dispatch:
   workflow_call:
 
-permissions:
-  id-token: write
-
 jobs:
   sign-project:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
+      contents: write
     steps:
       - uses: actions/checkout@v3
       - name: sigstore-ansible-github-action
