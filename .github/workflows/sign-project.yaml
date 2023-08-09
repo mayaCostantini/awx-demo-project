@@ -17,5 +17,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: sigstore-ansible-github-action
-        uses: mayaCostantini/sigstore-ansible-github-action@v0.0.3rc2
+        uses: mayaCostantini/sigstore-ansible-github-action@v0.0.3rc3
 
